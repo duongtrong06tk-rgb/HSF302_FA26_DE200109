@@ -40,6 +40,12 @@ public class Main {
         Employee reChecked = dao.findById(emp.getId());
         System.out.println("Kiem tra lai sau update: " + reChecked);
 
+        // ===== DELETE =====
+        dao.delete(emp.getId());
+        // [Lifecycle] ben trong delete(): entity tim duoc chuyen MANAGED -> REMOVED,
+        // bi xoa that su khoi DB khi commit().
+        Employee afterDelete = dao.findById(emp.getId());
+        System.out.println("Sau khi xoa, tim lai: " + afterDelete); // ky vong: null
 
     }
 
