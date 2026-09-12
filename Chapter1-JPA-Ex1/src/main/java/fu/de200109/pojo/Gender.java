@@ -1,4 +1,4 @@
-package fu.de200109;
+package fu.de200109.pojo;
 
 public enum Gender {
     MALE,
