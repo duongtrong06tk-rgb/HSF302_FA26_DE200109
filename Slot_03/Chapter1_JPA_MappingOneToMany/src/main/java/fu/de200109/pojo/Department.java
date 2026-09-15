@@ -17,4 +17,5 @@ public class Department {
     @Column(name = "location")
     private String location;
 
+
 }
