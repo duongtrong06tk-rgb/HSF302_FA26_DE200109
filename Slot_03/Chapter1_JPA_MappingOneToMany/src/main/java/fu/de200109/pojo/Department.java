@@ -29,6 +29,16 @@ public class Department {
         this.location = location;
     }
 
+    // TODO 2.4: Helper Methods đồng bộ 2 chiều (Bắt buộc phải có trong thi/kiểm tra)
+    public void addEmployee(Employee employee) {
+        this.employees.add(employee);
+        employee.setDepartment(this);
+    }
+
+    public void removeEmployee(Employee employee) {
+        this.employees.remove(employee);
+        employee.setDepartment(null);
+    }
 
     // Getters and Setters
     public Long getId() { return id; }
