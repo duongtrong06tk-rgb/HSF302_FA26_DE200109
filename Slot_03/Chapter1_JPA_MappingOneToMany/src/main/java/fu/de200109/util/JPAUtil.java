@@ -10,7 +10,7 @@ public class JPAUtil {
     public JPAUtil() {
     }
 
-    public static EntityManagerFactory getEmf() {
+    public static EntityManagerFactory getEMF() {
         return EMF;
     }
 
