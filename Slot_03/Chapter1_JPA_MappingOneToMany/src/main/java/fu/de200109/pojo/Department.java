@@ -2,6 +2,9 @@ package fu.de200109.pojo;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "departments")
 public class Department {
@@ -13,6 +16,5 @@ public class Department {
     private String name;
     @Column(name = "location")
     private String location;
-
 
 }
