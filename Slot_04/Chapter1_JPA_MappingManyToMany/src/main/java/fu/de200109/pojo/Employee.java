@@ -3,6 +3,8 @@ package fu.de200109.pojo;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "employees")
@@ -29,10 +31,14 @@ public class Employee {
 
     private boolean active = true;
 
-    // TODO 2.2: Owning side - giữ khóa ngoại department_id, dùng FetchType.LAZY
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "department_id", nullable = false)
-    private Department department;
+    // TODO 5.2: Owning side
+    @ManyToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+    @JoinTable(
+            name = "employee_project",
+            joinColumns = @JoinColumn(name = "employee_id"),
+            inverseJoinColumns = @JoinColumn(name = "project_id")
+    )
+    private Set<Project> projects = new HashSet<>();
 
     // Constructors
     public Employee() {
@@ -69,8 +75,7 @@ public class Employee {
     public boolean isActive() { return active; }
     public void setActive(boolean active) { this.active = active; }
 
-    public Department getDepartment() { return department; }
-    public void setDepartment(Department department) { this.department = department; }
+    public Set<Project> getProjects() { return projects; }
 
     @Override
     public String toString() {
