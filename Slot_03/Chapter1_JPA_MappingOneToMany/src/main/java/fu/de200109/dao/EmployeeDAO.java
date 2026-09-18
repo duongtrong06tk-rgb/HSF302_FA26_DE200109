@@ -41,5 +41,19 @@ public class EmployeeDAO {
         }
     }
 
+    public void update(Employee employee) {
+        EntityManager em = JPAUtil.getEMF().createEntityManager();
+        EntityTransaction tx = em.getTransaction();
+        try {
+            tx.begin();
+            employee = em.merge(employee); // Gán lại kết quả sau khi merge
+            tx.commit();
+        } catch (Exception e) {
+            if (tx != null && tx.isActive()) tx.rollback();
+            e.printStackTrace();
+        } finally {
+            em.close();
+        }
+    }
 
 }
