@@ -21,16 +21,28 @@ public class Project {
     private LocalDate startDate;
     private LocalDate endDate;
 
+    @ManyToMany(mappedBy = "projects") // TODO 5.3: Inverse side
+    private Set<Employee> employees = new HashSet<>();
+
     public Project() {
     }
 
-    public Project(Long id, String projectCode, String projectName, BigDecimal budget, LocalDate startDate, LocalDate endDate) {
+    public Project(Long id, String projectCode, String projectName, BigDecimal budget, LocalDate startDate, LocalDate endDate, Set<Employee> employees) {
         this.id = id;
         this.projectCode = projectCode;
         this.projectName = projectName;
         this.budget = budget;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.employees = employees;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getProjectCode() {
@@ -49,22 +61,6 @@ public class Project {
         this.projectName = projectName;
     }
 
-    public BigDecimal getBudget() {
-        return budget;
-    }
-
-    public void setBudget(BigDecimal budget) {
-        this.budget = budget;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public LocalDate getStartDate() {
         return startDate;
     }
@@ -73,11 +69,27 @@ public class Project {
         this.startDate = startDate;
     }
 
+    public BigDecimal getBudget() {
+        return budget;
+    }
+
+    public void setBudget(BigDecimal budget) {
+        this.budget = budget;
+    }
+
     public LocalDate getEndDate() {
         return endDate;
     }
 
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
+    }
+
+    public Set<Employee> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(Set<Employee> employees) {
+        this.employees = employees;
     }
 }
