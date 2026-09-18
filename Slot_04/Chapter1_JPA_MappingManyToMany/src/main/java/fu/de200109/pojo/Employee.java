@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -81,5 +82,13 @@ public class Employee {
     public String toString() {
         return "Employee{" + "id=" + id + ", fullName='" + fullName + '\'' + ", email='" + email + '\'' +
                 ", salary=" + salary + ", gender=" + gender + ", active=" + active + '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return Objects.equals(email, employee.email);
     }
 }
