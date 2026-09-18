@@ -75,4 +75,17 @@ public class DepartmentDAO {
             em.close();
         }
     }
+
+    //TODO 2.9
+    public List<Department> findAllWithEmployees() {
+        EntityManager em = JPAUtil.getEMF().createEntityManager();
+        try {
+            // Sử dụng JOIN FETCH d.employees để nạp sớm (Eager Load) danh sách nhân viên đi kèm
+            // Dùng DISTINCT để tránh bị trùng lặp bản ghi phòng ban khi trả về kết quả
+            return em.createQuery("SELECT DISTINCT d FROM Department d JOIN FETCH d.employees", Department.class)
+                    .getResultList();
+        } finally {
+            em.close();
+        }
+    }
 }
