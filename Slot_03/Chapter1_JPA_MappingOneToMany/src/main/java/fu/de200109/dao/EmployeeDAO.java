@@ -23,5 +23,23 @@ public class EmployeeDAO {
         }
     }
 
+    public List<Employee> findAll() {
+        EntityManager em = JPAUtil.getEMF().createEntityManager();
+        try {
+            return em.createQuery("SELECT e FROM Employee e", Employee.class).getResultList();
+        } finally {
+            em.close();
+        }
+    }
+
+    public Employee findById(Long id) {
+        EntityManager em = JPAUtil.getEMF().createEntityManager();
+        try {
+            return em.find(Employee.class, id);
+        } finally {
+            em.close();
+        }
+    }
+
 
 }
