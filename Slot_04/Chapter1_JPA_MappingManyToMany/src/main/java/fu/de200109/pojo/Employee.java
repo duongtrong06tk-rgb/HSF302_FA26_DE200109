@@ -54,6 +54,11 @@ public class Employee {
         this.active = true;
     }
 
+    public void assignToProject(Project p) {
+        this.projects.add(p);
+        p.getEmployees().add(this);
+    }
+
     // Getters and Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
