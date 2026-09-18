@@ -16,7 +16,7 @@ public class Main {
     public static void main(String[] args) {
         DepartmentDAO departmentDAO = new DepartmentDAO();
 
-    // 1) Tạo Department + 3 Employee, add qua helper method (TODO 2.4)
+/*    // 1) Tạo Department + 3 Employee, add qua helper method (TODO 2.4)
         Department it = new Department("Marketing", "Ha Noi");
 
         Employee e1 = new Employee("aa.nguyen@company.com", "Nguyen Van A", Gender.MALE,
@@ -41,6 +41,25 @@ public class Main {
         System.out.println("Phong ban: " + found.getName());
         for (Employee e : found.getEmployees()) {
             System.out.println("  - " + e);
+        }
+*/
+        //TODO 2.8
+        List<Department> departments = departmentDAO.findAll();
+
+        // 2. Loop qua từng phòng ban và truy cập vào danh sách nhân viên (Kích hoạt N câu query phụ)
+        int count = 1;
+        for (Department d : departments) {
+            System.out.println("\n--- Vòng lặp thứ " + count + " ---");
+            System.out.println("Phòng ban: " + d.getName());
+
+            // LƯU Ý CHẤM ĐIỂM: Chạm vào hàm .getEmployees() tại đây sẽ kích hoạt 1 câu SQL phụ cho mỗi phòng ban
+            List<Employee> employeeList = d.getEmployees();
+
+            System.out.println(">> Số lượng nhân viên thuộc phòng: " + employeeList.size());
+            for (Employee e : employeeList) {
+                System.out.println(e.getFullName() + " | Email: " + e.getEmail());
+            }
+            count++;
         }
 
         JPAUtil.close();
