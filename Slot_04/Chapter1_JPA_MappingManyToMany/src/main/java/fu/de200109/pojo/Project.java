@@ -27,14 +27,11 @@ public class Project {
     public Project() {
     }
 
-    public Project(Long id, String projectCode, String projectName, BigDecimal budget, LocalDate startDate, LocalDate endDate, Set<Employee> employees) {
-        this.id = id;
+    public Project(String projectCode, String projectName, BigDecimal budget, LocalDate startDate) {
         this.projectCode = projectCode;
         this.projectName = projectName;
         this.budget = budget;
         this.startDate = startDate;
-        this.endDate = endDate;
-        this.employees = employees;
     }
 
     public Long getId() {

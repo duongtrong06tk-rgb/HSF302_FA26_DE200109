@@ -41,17 +41,19 @@ public class Employee {
     )
     private Set<Project> projects = new HashSet<>();
 
-    // Constructors
-    public Employee() {
-    }
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "department_id", nullable = false)
+    private Department department;
 
-    public Employee(String email, String fullName, Gender gender, BigDecimal salary, LocalDate hireDate) {
-        this.email = email;
+    // Constructors
+
+
+    public Employee(String fullName, BigDecimal salary, LocalDate hireDate, String email, Gender gender) {
         this.fullName = fullName;
-        this.gender = gender;
         this.salary = salary;
         this.hireDate = hireDate;
-        this.active = true;
+        this.email = email;
+        this.gender = gender;
     }
 
     public void assignToProject(Project p) {
@@ -82,6 +84,14 @@ public class Employee {
     public void setActive(boolean active) { this.active = active; }
 
     public Set<Project> getProjects() { return projects; }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
 
     @Override
     public String toString() {
