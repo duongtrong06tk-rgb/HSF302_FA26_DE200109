@@ -42,7 +42,7 @@ public class Employee {
     private Set<Project> projects = new HashSet<>();
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "department_id", nullable = false)
+    @JoinColumn(name = "department_id")
     private Department department;
 
     // Constructors
@@ -54,6 +54,10 @@ public class Employee {
         this.hireDate = hireDate;
         this.email = email;
         this.gender = gender;
+    }
+
+    public Employee() {
+
     }
 
     public void assignToProject(Project p) {

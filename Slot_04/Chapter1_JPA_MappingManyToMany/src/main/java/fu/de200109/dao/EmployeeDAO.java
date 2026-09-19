@@ -35,6 +35,22 @@ public class EmployeeDAO {
         }
     }
 
+    /**
+     * Lấy toàn bộ danh sách nhân viên kèm theo dự án (Eager Fetch).
+     * - Dùng LEFT JOIN FETCH để ngay cả nhân viên chưa được gán dự án nào vẫn được trả về.
+     * - Dùng DISTINCT để loại bỏ các bản ghi Employee bị duplicate do cơ chế JOIN của SQL.
+     * - Giúp truy xuất e.getProjects() an toàn mà KHÔNG bị LazyInitializationException ngay cả khi EntityManager đã đóng.
+     */
+    public List<Employee> findAllWithProjects() {
+        EntityManager em = JPAUtil.getEMF().createEntityManager();
+        try {
+            return em.createQuery("SELECT DISTINCT e FROM Employee e LEFT JOIN FETCH e.projects", Employee.class).getResultList();
+        } finally {
+            em.close();
+        }
+    }
+
+
     public Employee findById(Long id) {
         EntityManager em = JPAUtil.getEMF().createEntityManager();
         try {

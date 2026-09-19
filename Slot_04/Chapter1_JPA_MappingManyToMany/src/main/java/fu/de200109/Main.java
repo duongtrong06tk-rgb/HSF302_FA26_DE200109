@@ -62,18 +62,18 @@ public class Main {
         employeeDAO.assignEmployeeToProject(nv2Id, proBId);
         employeeDAO.assignEmployeeToProject(nv3Id, proAId);
 
-        // 4. In danh sách project của từng nhân viên (Mở kết nối mới để đọc dữ liệu thật từ DB)
-        System.out.println("\n--- DANH SÁCH DỰ ÁN CỦA NHÂN VIÊN ---");
-        EntityManager emRead = JPAUtil.getEMF().createEntityManager();
-        try {
-            List<Employee> allEmps = emRead.createQuery("SELECT e FROM Employee e", Employee.class).getResultList();
-            for (Employee e : allEmps) {
-                System.out.print("Nhân viên " + e.getFullName() + " tham gia: ");
-                e.getProjects().forEach(p -> System.out.print("[" + p.getProjectName() + "] "));
-                System.out.println();
-            }
-        } finally {
-            emRead.close();
+        // 4. In danh sách project của từng nhân viên (Sử dụng EmployeeDAO với JOIN FETCH để chống LazyInitializationException)
+        System.out.println("\n--- DANH SÁCH DỰ ÁN CỦA NHÂN VIÊN (Fetch an toàn qua EmployeeDAO) ---");
+        List<Employee> allEmps = employeeDAO.findAllWithProjects();
+        // Chú ý: EntityManager bên trong findAllWithProjects() ĐÃ ĐƯỢC ĐÓNG trong khối finally!
+        // Nhưng nhờ có 'LEFT JOIN FETCH e.projects', dữ liệu projects đã được nạp sẵn, không gây lỗi Lazy:
+        for (Employee e : allEmps) {
+            System.out.print("Nhân viên " + e.getFullName() + " tham gia: ");
+            e.getProjects().forEach(p -> System.out.print("[" + p.getProjectName() + "] "));
+            System.out.println();
         }
+
+        // Đóng EntityManagerFactory khi chương trình kết thúc để giải phóng tài nguyên
+        JPAUtil.close();
     }
 }

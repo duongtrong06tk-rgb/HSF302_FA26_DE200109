@@ -9,6 +9,7 @@
 
         <class>fu.de200109.pojo.Department</class>
         <class>fu.de200109.pojo.Employee</class>
+        <class>fu.de200109.pojo.Project</class>
 
         <properties>
             <property name="jakarta.persistence.jdbc.driver"
