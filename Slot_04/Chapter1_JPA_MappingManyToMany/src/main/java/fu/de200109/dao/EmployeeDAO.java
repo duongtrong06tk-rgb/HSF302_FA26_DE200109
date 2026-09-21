@@ -5,7 +5,6 @@ import fu.de200109.pojo.Project;
 import fu.de200109.util.JPAUtil;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
-import jakarta.transaction.Transactional;
 
 import java.util.List;
 
@@ -112,4 +111,19 @@ public class EmployeeDAO {
             em.close(); // Bắt buộc phải đóng EntityManager thủ công
         }
     }
+
+    // TODO 5.8
+    public List<Object[]> getProjectStats() {
+        EntityManager em = JPAUtil.getEMF().createEntityManager();
+        try {
+            String jpql = "SELECT p.projectName, COUNT(e), SUM(e.salary) " +
+                    "FROM Project p JOIN p.employees e " +
+                    "WHERE e.active = true " +
+                    "GROUP BY p.projectName";
+            return em.createQuery(jpql, Object[].class).getResultList();
+        } finally {
+            em.close();
+        }
+    }
+
 }
