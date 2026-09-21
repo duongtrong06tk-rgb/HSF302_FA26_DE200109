@@ -158,4 +158,27 @@ public class EmployeeDAO {
         }
     }
 
+    // TODO 5.11
+    public void deactivateEmployee(Long employeeId) {
+        EntityManager em = JPAUtil.getEMF().createEntityManager();
+        EntityTransaction tx = em.getTransaction();
+        try {
+            tx.begin();
+            Employee employee = em.find(Employee.class, employeeId);
+            if (employee != null) {
+                employee.setActive(false);
+                /*
+                 * Nhân viên nghỉ việc KHÔNG nên tự động bị gỡ khỏi tất cả dự án.
+                 * Cần giữ nguyên dữ liệu trong bảng trung gian employee_project
+                 * để phục vụ tra cứu lịch sử nhân sự sau này.
+                 */
+            }
+            tx.commit();
+        } catch (Exception e) {
+            if (tx.isActive()) tx.rollback();
+            e.printStackTrace();
+        } finally {
+            em.close();
+        }
+    }
 }
