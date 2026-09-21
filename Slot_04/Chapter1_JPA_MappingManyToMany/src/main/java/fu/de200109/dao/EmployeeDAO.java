@@ -126,4 +126,26 @@ public class EmployeeDAO {
         }
     }
 
+    // TODO 5.9
+    public void unassignEmployeeFromProject(Long employeeId, Long projectId) {
+        EntityManager em = JPAUtil.getEMF().createEntityManager();
+        EntityTransaction tx = em.getTransaction();
+        try {
+            tx.begin();
+            Employee employee = em.find(Employee.class, employeeId);
+            Project project = em.find(Project.class, projectId);
+            if (employee != null && project != null) {
+                employee.unassignFromProject(project);
+            }
+            tx.commit();
+        } catch (Exception e) {
+            if (tx.isActive()) tx.rollback();
+            e.printStackTrace();
+        } finally {
+            em.close();
+        }
+    }
+
+
+
 }
