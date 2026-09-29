@@ -1,4 +1,4 @@
-package runner;
+package com.hsf302.ch4.runner;
 
 import com.hsf302.ch4.pojo.Department;
 import com.hsf302.ch4.pojo.Gender;

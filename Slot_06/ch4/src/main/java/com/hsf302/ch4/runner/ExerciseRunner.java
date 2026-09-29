@@ -1,4 +1,4 @@
-package runner;
+package com.hsf302.ch4.runner;
 
 import com.hsf302.ch4.pojo.Gender;
 import com.hsf302.ch4.pojo.Student;
@@ -24,8 +24,8 @@ public class ExerciseRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        partB();
-        partC();
+//        partB();
+//        partC();
         partD();
 //        bonus();      // chạy trên dữ liệu gốc → trước Part E
 //        partE();
