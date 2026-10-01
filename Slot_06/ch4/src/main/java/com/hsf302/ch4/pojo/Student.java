@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "students")
@@ -36,6 +38,7 @@ public class Student {
     private Double gpa;
 
     private boolean active;
+
 
     // Owning side: bảng students có cột department_id (FK → departments.id)
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
