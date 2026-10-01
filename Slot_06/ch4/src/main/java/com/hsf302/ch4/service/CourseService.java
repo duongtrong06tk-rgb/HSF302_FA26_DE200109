@@ -35,4 +35,8 @@ public interface CourseService {
 
     //TODO 17
     List<CourseEnrollmentCount> findTopEnrolled(int n);
+
+    //TODO 23
+    void deleteCourseDirectly(String code);   // cách SAI — để quan sát lỗi
+    int deleteCourse(String code);            // cách ĐÚNG
 }
