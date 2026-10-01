@@ -32,4 +32,7 @@ public interface CourseService {
 
     //TODO 16
     Course getWithStudents(String code);
+
+    //TODO 17
+    List<CourseEnrollmentCount> findTopEnrolled(int n);
 }
