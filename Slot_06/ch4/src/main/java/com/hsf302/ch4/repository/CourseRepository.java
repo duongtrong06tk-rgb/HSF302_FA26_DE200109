@@ -6,7 +6,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.*;
 
 public interface CourseRepository extends JpaRepository<Course, Long> {
-    // bổ sung dần từ TODO 7
 
+    //TODO 7
     Optional<Course> findByCode(String code);
+
+    //TODO 8
+    List<Course> findBySemesterOrderByCodeAsc(String semester);
+    long countBySemester(String semester);
 }
