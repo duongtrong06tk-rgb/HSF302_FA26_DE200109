@@ -29,8 +29,8 @@ public class Exercise2Runner implements CommandLineRunner {
     public void run(String... args) {
 //        partB();
 //        partC();
-        partD();
-//        bonus();        // chạy trên dữ liệu gốc → trước Part E
+//        partD();
+        bonus();        // chạy trên dữ liệu gốc → trước Part E
 //        partE();
     }
 
