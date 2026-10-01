@@ -35,7 +35,7 @@ public class ExerciseRunner implements CommandLineRunner {
 
     private void partB() { todo6(); todo7(); }
     private void partC() { todo8(); todo9(); todo10(); todo11(); }
-    private void partD() { /*todo12(); todo13(); todo14(); todo15();*/ todo16(); /*todo17(); todo18(); todo19();*/ }
+    private void partD() { /*todo12(); todo13(); todo14(); todo15(); todo16();*/ todo17(); /*todo18(); todo19();*/ }
 //    private void bonus() { todo24(); }
 //    private void partE() { todo20(); todo21(); todo22(); todo23(); }
 
@@ -143,5 +143,10 @@ public class ExerciseRunner implements CommandLineRunner {
         Department aiFull = departmentService.getWithStudents("AI");
         System.out.println("(b) " + aiFull);
         aiFull.getStudents().forEach(s -> System.out.println("     " + s));
+    }
+
+    private void todo17() {
+        title("TODO 17: Native query - TOP N");
+        printList("Top 2 GPA of SE", studentService.findTopNInDepartment("SE", 2));
     }
 }
