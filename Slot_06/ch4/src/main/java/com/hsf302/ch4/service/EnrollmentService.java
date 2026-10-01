@@ -2,6 +2,7 @@ package com.hsf302.ch4.service;
 
 import com.hsf302.ch4.dto.*;
 import com.hsf302.ch4.pojo.*;
+import org.springframework.data.domain.Page;
 
 import java.util.*;
 
@@ -33,4 +34,7 @@ public interface EnrollmentService {
 
     //TODO 18
     List<EnrollmentView> getEnrollmentsOfDepartment(String deptCode);
+
+    //TODO 19
+    Page<Student> findStudentsInCoursePage(String courseCode, int pageIndex, int size);
 }
