@@ -1,5 +1,6 @@
 package com.hsf302.ch4.service;
 
+import com.hsf302.ch4.dto.*;
 import com.hsf302.ch4.pojo.*;
 
 import java.util.*;
@@ -20,4 +21,7 @@ public interface EnrollmentService {
 
     //TODO 12
     List<Student> findGoodStudentsInCourse(String courseCode, double minGpa);
+
+    //TODO 14
+    List<StudentCreditDTO> getCreditSummary(int minCredits);
 }

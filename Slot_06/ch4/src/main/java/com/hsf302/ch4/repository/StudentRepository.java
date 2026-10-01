@@ -1,9 +1,7 @@
 package com.hsf302.ch4.repository;
 
-import com.hsf302.ch4.dto.StudentSummary;
-import com.hsf302.ch4.pojo.Department;
-import com.hsf302.ch4.pojo.Gender;
-import com.hsf302.ch4.pojo.Student;
+import com.hsf302.ch4.dto.*;
+import com.hsf302.ch4.pojo.*;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -94,4 +92,12 @@ public interface StudentRepository extends JpaRepository<Student, Long>,
             "WHERE c.code = :code AND s.gpa >= :minGpa ORDER BY s.gpa DESC")
     List<Student> findGoodStudentsInCourse(@Param("code") String courseCode,
                                            @Param("minGpa") double minGpa);
+
+    //TODO 14
+    @Query("SELECT new com.hsf302.ch4.dto.StudentCreditDTO(s.studentCode, s.fullName, COUNT(c), SUM(c.credits)) " +
+            "FROM Student s JOIN s.courses c " +
+            "GROUP BY s.studentCode, s.fullName " +
+            "HAVING SUM(c.credits) >= :minCredits " +
+            "ORDER BY SUM(c.credits) DESC, s.fullName")
+    List<StudentCreditDTO> getCreditSummary(@Param("minCredits") long minCredits);
 }
