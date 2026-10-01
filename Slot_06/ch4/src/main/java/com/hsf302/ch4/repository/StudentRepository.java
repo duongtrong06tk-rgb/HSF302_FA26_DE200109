@@ -108,4 +108,12 @@ public interface StudentRepository extends JpaRepository<Student, Long>,
     //TODO 16
     @Query("SELECT s FROM Student s LEFT JOIN FETCH s.courses WHERE s.studentCode = :code")
     Optional<Student> findByStudentCodeWithCourses(@Param("code") String studentCode);
+
+    //TODO 18
+    @Query("SELECT s.studentCode AS studentCode, s.fullName AS fullName, " +
+            "       c.code AS courseCode, c.name AS courseName, c.credits AS credits " +
+            "FROM Student s JOIN s.department d JOIN s.courses c " +
+            "WHERE d.code = :deptCode " +
+            "ORDER BY s.studentCode, c.code")
+    List<EnrollmentView> findEnrollmentsOfDepartment(@Param("deptCode") String deptCode);
 }

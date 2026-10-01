@@ -30,4 +30,7 @@ public interface EnrollmentService {
 
     //TODO 16
     Student getStudentWithCourses(String studentCode);
+
+    //TODO 18
+    List<EnrollmentView> getEnrollmentsOfDepartment(String deptCode);
 }
