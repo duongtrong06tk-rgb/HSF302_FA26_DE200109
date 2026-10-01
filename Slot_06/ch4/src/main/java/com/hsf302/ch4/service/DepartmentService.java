@@ -13,4 +13,7 @@ public interface DepartmentService {
     List<Department> findDepartmentsWithoutStudents();  // TODO 11d
 
     List<DepartmentStatDTO> getStatistics();   // TODO 14 (dùng lại ở TODO 23)
+
+    Optional<Department> findByCode(String code);   // TODO 16a
+    Department getWithStudents(String code);   // TODO 16b
 }
