@@ -41,4 +41,6 @@ public interface EnrollmentService {
     //TODO 25
     List<Student> search(String courseCode, String semester, String deptCode, Double minGpa);
 
+    //TODO 20
+    void enroll(String studentCode, String courseCode);
 }
