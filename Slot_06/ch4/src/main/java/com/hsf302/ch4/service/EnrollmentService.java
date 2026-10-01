@@ -37,4 +37,8 @@ public interface EnrollmentService {
 
     //TODO 19
     Page<Student> findStudentsInCoursePage(String courseCode, int pageIndex, int size);
+
+    //TODO 25
+    List<Student> search(String courseCode, String semester, String deptCode, Double minGpa);
+
 }
