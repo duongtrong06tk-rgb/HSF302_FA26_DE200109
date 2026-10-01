@@ -1,5 +1,6 @@
 package com.hsf302.ch4.runner;
 
+import com.hsf302.ch4.dto.DepartmentStudentCount;
 import com.hsf302.ch4.dto.StudentSummary;
 import com.hsf302.ch4.pojo.Department;
 import com.hsf302.ch4.pojo.Gender;
@@ -38,7 +39,7 @@ public class ExerciseRunner implements CommandLineRunner {
     private void partC() { todo8(); todo9(); todo10(); todo11(); }
     private void partD() { todo12(); todo13(); todo14(); todo15(); todo16(); todo17(); todo18(); todo19(); }
     private void bonus() { todo24(); }
-    private void partE() { /*todo20(); todo21(); todo22(); */todo23();/**/ }
+    private void partE() { /*todo20(); todo21(); todo22(); todo23();*/todo25();/**/ }
 
     // ===== helpers =====
     private void title(String t) {
@@ -203,5 +204,16 @@ public class ExerciseRunner implements CommandLineRunner {
         System.out.println("Deleted: " + deleted);
         System.out.println("Students left: " + studentService.count());
         printList("Final statistics", departmentService.getStatistics());
+    }
+
+    private void todo25() {
+        title("TODO 25 (bonus) : Count Students By Department");
+        List<DepartmentStudentCount> list = departmentService.countStudentsByDepartment();
+        list.forEach(p -> {
+            System.out.printf("   %-25s | %d",
+                p.getDepartmentName(), p.getStudentCount());
+            System.out.println();
+        });
+        System.out.println("   -> " + list.size() + " record(s)");
     }
 }
