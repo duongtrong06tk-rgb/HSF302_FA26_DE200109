@@ -39,7 +39,13 @@ public class Student {
 
     private boolean active;
 
-
+    @ManyToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+    @JoinTable(
+            name = "student_courses",
+            joinColumns = @JoinColumn(name = "student_id"),
+            inverseJoinColumns = @JoinColumn(name = "course_id")
+    )
+    private Set<Course> courses = new HashSet<>();
 
     // Owning side: bảng students có cột department_id (FK → departments.id)
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
