@@ -52,6 +52,7 @@ public class EnrollmentServiceImpl implements EnrollmentService {
                 .orElseThrow(() -> new IllegalArgumentException("Course not found: " + courseCode));
     }
 
+    //TODO 9
     @Override
     public List<Student> findStudentsInCourse(String courseCode) {
         return studentRepository.findByCourses_CodeOrderByFullNameAsc(courseCode);
