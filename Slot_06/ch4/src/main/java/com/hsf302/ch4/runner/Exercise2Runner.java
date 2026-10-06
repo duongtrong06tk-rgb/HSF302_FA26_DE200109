@@ -39,7 +39,7 @@ public class Exercise2Runner implements CommandLineRunner {
 //    private void partC() { todo8(); todo9(); todo10(); todo11(); }
 //    private void partD() { todo12(); todo13(); todo14(); todo15(); todo16(); todo17(); todo18(); todo19(); }
 //    private void bonus() { todo25(); }
-    private void partE() { /*todo20(); todo21(); todo22(); todo23();*/ todo24(); }
+    private void partE() { /*todo20(); todo21(); todo22(); todo23(); todo24();*/ todoTest2();}
 
     // ===== helpers =====
     private void title(String t) {
@@ -253,5 +253,23 @@ public class Exercise2Runner implements CommandLineRunner {
         System.out.println("Deleted rows: " + enrollmentService.removeEnrollmentsOfInactiveStudents());
         printCourseStats();
         printList("Students without courses", enrollmentService.findStudentsWithoutCourses());
+    }
+
+    private void todoTest() {
+        title("TODO: Order Course by Desc credits");
+
+        printList("Courses:", courseService.findByOrderCreditsDesc());
+    }
+
+    private void todoTest1() {
+        title("TODO: Find Course with Credits > Min, < Max");
+
+        printList("Courses:", courseService.findByCreditsBetween(2,3));
+    }
+
+    private void todoTest2() {
+        title("TODO: Find Course by keyword");
+
+        printList("Courses:", courseService.findByNameContainKeyWord("ment"));
     }
 }

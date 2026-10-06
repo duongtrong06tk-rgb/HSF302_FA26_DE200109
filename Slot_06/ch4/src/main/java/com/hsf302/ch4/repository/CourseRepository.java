@@ -47,4 +47,15 @@ public interface CourseRepository extends JpaRepository<Course, Long> {
             "ORDER BY enrolled DESC, c.code",
             nativeQuery = true)
     List<CourseEnrollmentCount> findTopEnrolledNative(@Param("n") int n);
+
+    List<Course> findByOrderByCreditsDesc();
+
+    List<Course> findByCreditsBetween(Integer min, Integer max);
+
+    @Query("""
+        SELECT c
+        FROM Course c 
+        WHERE LOWER(c.name) LIKE LOWER(CONCAT('%', :keyword, '%'))  
+    """)
+    List<Course> findByNameContainKeyWord(@Param("keyword") String keyword);
 }

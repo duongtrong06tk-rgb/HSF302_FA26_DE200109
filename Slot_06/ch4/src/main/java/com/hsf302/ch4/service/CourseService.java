@@ -2,6 +2,7 @@ package com.hsf302.ch4.service;
 
 import com.hsf302.ch4.dto.*;
 import com.hsf302.ch4.pojo.*;
+import org.springframework.data.repository.query.Param;
 
 import java.util.*;
 
@@ -39,4 +40,10 @@ public interface CourseService {
     //TODO 23
     void deleteCourseDirectly(String code);   // cách SAI — để quan sát lỗi
     int deleteCourse(String code);            // cách ĐÚNG
+
+    List<Course> findByOrderCreditsDesc();
+
+    List<Course> findByCreditsBetween(int min, int max);
+
+    List<Course> findByNameContainKeyWord(String keyword);
 }

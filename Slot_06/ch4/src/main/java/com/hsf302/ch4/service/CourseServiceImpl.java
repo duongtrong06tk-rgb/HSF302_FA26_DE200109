@@ -115,6 +115,24 @@ public class CourseServiceImpl implements CourseService {
         return students.size();
     }
 
+    @Override
+    public List<Course> findByOrderCreditsDesc() {
+        return courseRepository.findByOrderByCreditsDesc();
+    }
+
+    @Override
+    public List<Course> findByCreditsBetween(int min, int max) {
+        return courseRepository.findByCreditsBetween(min, max);
+    }
+
+    @Override
+    public List<Course> findByNameContainKeyWord(String keyword) {
+        if (keyword == null || keyword.isBlank()) {
+            throw new IllegalArgumentException("Keyword must not be blank");
+        }
+        return courseRepository.findByNameContainKeyWord(keyword);
+    }
+
     private Course getCourse(String code) {
         return courseRepository.findByCode(code)
                 .orElseThrow(() -> new IllegalArgumentException("Course not found: " + code));
