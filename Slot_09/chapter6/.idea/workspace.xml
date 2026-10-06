@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f89f4237-b828-46ce-9261-2fa14aa71373" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hsf302/chapter6/Chapter6Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hsf302/chapter6/Chapter6ApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Slot_06/ch4/src/main/java/com/hsf302/ch4/repository/CourseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slot_06/ch4/src/main/java/com/hsf302/ch4/repository/CourseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Slot_06/ch4/src/main/java/com/hsf302/ch4/runner/Exercise2Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slot_06/ch4/src/main/java/com/hsf302/ch4/runner/Exercise2Runner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Slot_06/ch4/src/main/java/com/hsf302/ch4/service/CourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slot_06/ch4/src/main/java/com/hsf302/ch4/service/CourseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Slot_06/ch4/src/main/java/com/hsf302/ch4/service/CourseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slot_06/ch4/src/main/java/com/hsf302/ch4/service/CourseServiceImpl.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "duongtrong06tk-rgb"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/duongtrong06tk-rgb/HSF302_FA26_DE200109.git",
+    "accountId": "603c5104-06ed-46d0-8c08-e805b9d93254"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="3KJaR9aAfwFciHkLAmkYtLomLdw" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.All in chapter6.executor": "Debug",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "exercise2",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Documents/Ki_5/HSF302/prj/Slot_09/chapter6"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="All in chapter6" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="chapter6" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in chapter6" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f89f4237-b828-46ce-9261-2fa14aa71373" name="Changes" comment="" />
+      <created>1791278114095</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1791278114095</updated>
+    </task>
+    <servers />
+  </component>
+</project>
