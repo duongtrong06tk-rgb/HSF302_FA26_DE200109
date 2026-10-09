@@ -39,7 +39,7 @@ public class StudentController {
     // ==================== READ ALL ====================
 //    BTVN_01
 //    @GetMapping
-//    public String list(@RequestParam(value = "keyword", required = false) String keyword, Model model) {
+//    public String List(@RequestParam(value = "keyword", required = false) String keyword, Model model) {
 //        List<Student> students = studentService.search(keyword);
 //        model.addAttribute("keyword", keyword);
 //        model.addAttribute("students", students);
@@ -50,7 +50,7 @@ public class StudentController {
     @GetMapping
     public String List(@RequestParam(value = "keyword", required = false) String keyword,
                        @RequestParam(defaultValue = "0") int page,
-                       @RequestParam(defaultValue = "2") int size,
+                       @RequestParam(defaultValue = "5") int size,
                        Model model) {
 
         Pageable pageable = PageRequest.of(page, size, Sort.by("id").ascending());
