@@ -34,8 +34,10 @@ public class StudentController {
     // ==================== READ ALL ====================
 
     @GetMapping
-    public String list(Model model) {
-        model.addAttribute("students", studentService.findAll());
+    public String list(@RequestParam(value = "keyword", required = false) String keyword, Model model) {
+        List<Student> students = studentService.search(keyword);
+        model.addAttribute("keyword", keyword);
+        model.addAttribute("students", students);
         return "students/list";
     }
 
