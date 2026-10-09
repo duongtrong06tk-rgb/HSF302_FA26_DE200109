@@ -4,6 +4,11 @@ import com.hsf302.chapter6.entity.Student;
 import com.hsf302.chapter6.service.StudentService;
 import jakarta.validation.Valid;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.querydsl.QPageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -32,12 +37,28 @@ public class StudentController {
     }
 
     // ==================== READ ALL ====================
+//    BTVN_01
+//    @GetMapping
+//    public String list(@RequestParam(value = "keyword", required = false) String keyword, Model model) {
+//        List<Student> students = studentService.search(keyword);
+//        model.addAttribute("keyword", keyword);
+//        model.addAttribute("students", students);
+//        return "students/list";
+//    }
 
+//    BTVN_02
     @GetMapping
-    public String list(@RequestParam(value = "keyword", required = false) String keyword, Model model) {
-        List<Student> students = studentService.search(keyword);
+    public String List(@RequestParam(value = "keyword", required = false) String keyword,
+                       @RequestParam(defaultValue = "0") int page,
+                       @RequestParam(defaultValue = "2") int size,
+                       Model model) {
+
+        Pageable pageable = PageRequest.of(page, size, Sort.by("id").ascending());
+        Page<Student> studentPage = studentService.findAll(keyword, pageable);
+
+        model.addAttribute("studentPage", studentPage);
         model.addAttribute("keyword", keyword);
-        model.addAttribute("students", students);
+
         return "students/list";
     }
 

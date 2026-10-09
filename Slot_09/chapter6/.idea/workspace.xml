@@ -10,6 +10,7 @@
       <change beforePath="$PROJECT_DIR$/chapter6/src/main/java/com/hsf302/chapter6/repository/StudentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter6/src/main/java/com/hsf302/chapter6/repository/StudentRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chapter6/src/main/java/com/hsf302/chapter6/service/Impl/StudentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter6/src/main/java/com/hsf302/chapter6/service/Impl/StudentServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chapter6/src/main/java/com/hsf302/chapter6/service/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter6/src/main/java/com/hsf302/chapter6/service/StudentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter6/src/main/resources/templates/fragments/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/chapter6/src/main/resources/templates/fragments/layout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chapter6/src/main/resources/templates/students/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/chapter6/src/main/resources/templates/students/list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,21 +54,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Chapter6Application.executor": "Run",
-    "Application.StudentManagementApplication.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Documents/Ki_5/HSF302/prj/Slot_09/chapter6",
-    "settings.editor.selected.configurable": "editor.stickyLines"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Chapter6Application.executor&quot;: &quot;Run&quot;,
+    &quot;Application.StudentManagementApplication.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Documents/Ki_5/HSF302/prj/Slot_09/chapter6&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.stickyLines&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Documents\Ki_5\HSF302\prj\Slot_09\chapter6\chapter6\src\main\resources\static\css" />

@@ -3,6 +3,8 @@ package com.hsf302.chapter6.service.Impl;
 import com.hsf302.chapter6.entity.Student;
 import com.hsf302.chapter6.repository.StudentRepository;
 import com.hsf302.chapter6.service.StudentService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -77,15 +79,23 @@ public class StudentServiceImpl implements StudentService {
         return List.of("CNTT", "KTPM", "HTTT", "ATTT", "MMT");
     }
 
+//    BTVN_01
+//    @Override
+//    public List<Student> search(String keyword) {
+//        Sort sort = Sort.by(Sort.Direction.ASC, "id");
+//        if (keyword == null || keyword.trim().isEmpty()) {
+//            return studentRepository.findAll(sort);
+//        }
+//        String cleanKeyword = keyword.trim();
+//        return studentRepository.findByNameContainingIgnoreCaseOrEmailContainingIgnoreCase(cleanKeyword, cleanKeyword, sort);
+//    }
+
     @Override
-    public List<Student> search(String keyword) {
-        Sort sort = Sort.by(Sort.Direction.ASC, "id");
-        if (keyword == null || keyword.trim().isBlank()) {
-            return studentRepository.findAll(sort);
+    public Page<Student> findAll(String keyword, Pageable pageable) {
+        if (keyword == null || keyword.trim().isEmpty()) {
+            return studentRepository.findAll(pageable);
         }
         String cleanKeyword = keyword.trim();
-        return studentRepository.findByNameContainingIgnoreCaseOrEmailContainingIgnoreCase(cleanKeyword, cleanKeyword, sort);
+        return studentRepository.findByNameContainingIgnoreCaseOrEmailContainingIgnoreCase(cleanKeyword, cleanKeyword, pageable);
     }
-
-
 }
